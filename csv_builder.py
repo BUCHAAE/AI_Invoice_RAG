@@ -1,102 +1,99 @@
 import os
-import pandas as pd
+import sys
 import pdfplumber
+import pandas as pd
+import re
+from datetime import datetime
+import contextlib
 
-# Define input/output paths
-invoices_dir = "invoices"
-invoice_summary_csv = "invoice_summary.csv"
-attendance_detail_csv = "attendance_detail.csv"
+@contextlib.contextmanager
+def suppress_stderr_real():
+    """Actually suppress underlying system stderr prints."""
+    devnull_fd = os.open(os.devnull, os.O_WRONLY)
+    stderr_fd = os.dup(2)
+    os.dup2(devnull_fd, 2)
+    try:
+        yield
+    finally:
+        os.dup2(stderr_fd, 2)
+        os.close(devnull_fd)
+        os.close(stderr_fd)
 
-# Initialise data lists
-invoice_data = []
+# Directories
+invoice_dir = "invoices"
+summary_csv = "invoice_summary.csv"
+attendance_csv = "attendance_detail.csv"
+
+# Lists to collect data
+summary_data = []
 attendance_data = []
 
-# Process each PDF invoice
-for filename in sorted(os.listdir(invoices_dir)):
+# Read invoices
+for filename in sorted(os.listdir(invoice_dir)):
     if filename.endswith(".pdf"):
-        filepath = os.path.join(invoices_dir, filename)
-        print(f"Processing {filename}...")
+        invoice_path = os.path.join(invoice_dir, filename)
+        with suppress_stderr_real():  # <-- TRUE suppression
+            with pdfplumber.open(invoice_path) as pdf:
+                text = "\n".join(page.extract_text() for page in pdf.pages if page.extract_text())
 
-        with pdfplumber.open(filepath) as pdf:
-            text = ""
-            for page in pdf.pages:
-                text += page.extract_text() + "\n"
+        # Extract fields
+        def extract_field(pattern, text, default=""):
+            match = re.search(pattern, text)
+            return match.group(1).strip() if match else default
 
-            lines = text.splitlines()
-            invoice_number = None
-            month_year = None
-            dog_name = None
-            dates_attended = []
-            original_cost_per_day = None
-            discount_applied = None
-            discounted_cost_per_day = None
-            total_amount_due = None
+        invoice_number = extract_field(r"Invoice Number:\s*(.+)", text)
+        service_provider_name = extract_field(r"Service Provider Name:\s*(.+)", text)
+        service_provider_address = extract_field(r"Service Provider Address:\s*(.+?)Client Name:", text, default="").replace("\n", " ").strip()
+        client_name = extract_field(r"Client Name:\s*(.+)", text)
+        client_address = extract_field(r"Client Address:\s*(.+?)Month Billed For:", text, default="").replace("\n", " ").strip()
+        month_billed_for = extract_field(r"Month Billed For:\s*(.+)", text)
+        dog_name = extract_field(r"Dog Name:\s*(.+)", text)
+        original_cost_per_day = extract_field(r"Original Cost Per Day:\s*\$(\d+\.\d{2})", text)
+        percentage_discount = extract_field(r"Percentage Discount:\s*(\d+)%", text)
+        total_amount_due = extract_field(r"Total Amount Due:\s*\$(\d+\.\d{2})", text)
 
-            for line in lines:
-                line = line.strip()
-                if line.startswith("Invoice:"):
-                    invoice_number = line.split("Invoice:")[1].strip()
-                if "Invoice for" in line:
-                    month_year = line.split("Invoice for")[1].strip()
-                if line.startswith("Dog:"):
-                    dog_name = line.split("Dog:")[1].strip()
-                if line.startswith("- ") and "/" in line:
-                    dates_attended.append(line[2:].strip())
-                if line.startswith("Original Cost per Day:"):
-                    original_cost_per_day = float(line.split("$")[1].strip())
-                if line.startswith("Discount Applied:"):
-                    discount_applied = int(line.split("%")[0].split()[-1].strip())
-                if line.startswith("Discounted Cost per Day:"):
-                    discounted_cost_per_day = float(line.split("$")[1].strip())
-                if line.startswith("Total Amount Due:"):
-                    total_amount_due = float(line.split("$")[1].strip())
+        # Extract all dates attended
+        dates_attended = re.findall(r"\b(\d{2}/\d{2}/\d{4})\b", text)
 
-            if invoice_number and month_year:
-                try:
-                    month_name, year = month_year.split()
-                    year = int(year)
-                except ValueError:
-                    month_name = "Unknown"
-                    year = 0
+        # Parse month and year
+        try:
+            billing_month, billing_year = month_billed_for.split()
+        except ValueError:
+            billing_month, billing_year = ("", "")
 
-                invoice_data.append({
+        # Save invoice summary
+        summary_data.append({
+            "InvoiceNumber": invoice_number,
+            "ServiceProviderName": service_provider_name,
+            "ServiceProviderAddress": service_provider_address,
+            "ClientName": client_name,
+            "ClientAddress": client_address,
+            "MonthBilledFor": billing_month,
+            "Year": billing_year,
+            "DogName": dog_name,
+            "OriginalCostPerDay": original_cost_per_day,
+            "PercentageDiscount": percentage_discount,
+            "TotalAmountDue": total_amount_due,
+            "DatesAttendedCount": len(dates_attended)
+        })
+
+        # Save attendance details
+        for date_str in dates_attended:
+            try:
+                dt = datetime.strptime(date_str, "%d/%m/%Y")
+                attendance_data.append({
                     "InvoiceNumber": invoice_number,
-                    "Year": year,
-                    "Month": month_name,
-                    "DogName": dog_name,
-                    "DaysAttended": len(dates_attended),
-                    "OriginalCostPerDay": original_cost_per_day,
-                    "DiscountApplied": discount_applied,
-                    "DiscountedCostPerDay": discounted_cost_per_day,
-                    "TotalCost": total_amount_due,
-                    "InvoiceText": text  # Full extracted text
+                    "Date": date_str,
+                    "Day": dt.strftime("%A"),
+                    "DogName": dog_name
                 })
+            except Exception as e:
+                print(f"⚠️ Error parsing date {date_str}: {e}")
 
-                for date in dates_attended:
-                    attendance_data.append({
-                        "InvoiceNumber": invoice_number,
-                        "DogName": dog_name,
-                        "DateAttended": date
-                    })
+# Save CSV files
+pd.DataFrame(summary_data).to_csv(summary_csv, index=False)
+pd.DataFrame(attendance_data).to_csv(attendance_csv, index=False)
 
-# Create dataframes
-invoice_df = pd.DataFrame(invoice_data)
-attendance_df = pd.DataFrame(attendance_data)
-
-# Sort invoice summary by Year and Month
-month_order = {
-    "January": 1, "February": 2, "March": 3, "April": 4,
-    "May": 5, "June": 6, "July": 7, "August": 8,
-    "September": 9, "October": 10, "November": 11, "December": 12
-}
-
-invoice_df["MonthNumber"] = invoice_df["Month"].map(month_order)
-invoice_df = invoice_df.sort_values(by=["Year", "MonthNumber"]).drop(columns=["MonthNumber"])
-
-# Save to CSV
-invoice_df.to_csv(invoice_summary_csv, index=False)
-attendance_df.to_csv(attendance_detail_csv, index=False)
-
-print(f"\u2705 Saved invoice summary to {invoice_summary_csv}")
-print(f"\u2705 Saved attendance detail to {attendance_detail_csv}")
-print("\u2705 Done.")
+print("✅ Saved invoice summary to invoice_summary.csv")
+print("✅ Saved attendance detail to attendance_detail.csv")
+print("✅ Done.")
