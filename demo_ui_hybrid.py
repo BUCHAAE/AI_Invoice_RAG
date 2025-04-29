@@ -1,3 +1,14 @@
+"""
+Author: Andrew Buchanan
+Date: 26/04/2025
+
+Purpose:
+This script sets up a local Gradio user interface (UI) to allow users 
+to ask questions about the invoices. It loads the pre-built vectorstore, 
+injects static facts (like service provider and client information), 
+and enables retrieval-augmented QA using a local LLM via Ollama.
+"""
+
 import os
 import pandas as pd
 from langchain_huggingface import HuggingFaceEmbeddings

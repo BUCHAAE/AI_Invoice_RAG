@@ -1,3 +1,14 @@
+"""
+Author: Andrew Buchanan
+Date: 26/04/2025
+
+Purpose:
+This script processes the CSV files created from the invoices, 
+creates a text-based vectorstore using a HuggingFace embedding model, 
+and saves the resulting database using Chroma for fast retrieval.
+It prepares the data for later Q&A interaction with the LLM.
+"""
+
 import os
 import pandas as pd
 from langchain_huggingface import HuggingFaceEmbeddings

@@ -1,3 +1,14 @@
+"""
+Author: Andrew Buchanan
+Date: 26/04/2025
+
+Purpose:
+This script reads the generated PDF invoices from the 'invoices' directory, 
+extracts structured data (such as client name, service provider, dates attended, etc.), 
+and saves it into two CSV files: 'invoice_summary.csv' and 'attendance_detail.csv'. 
+These CSVs are later used to build the vectorstore and provide context for the AI Q&A system.
+"""
+
 import os
 import sys
 import pdfplumber

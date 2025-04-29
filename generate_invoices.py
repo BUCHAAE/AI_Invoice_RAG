@@ -1,3 +1,14 @@
+"""
+Author: Andrew Buchanan
+Date: 26/04/2025
+
+Purpose:
+This script generates synthetic PDF invoices for a fictional dog daycare business 
+to simulate real-world data. The invoices include service provider and client details, 
+attendance dates, and costs. It provides a test dataset for building and evaluating 
+the invoice analysis system.
+"""
+
 from fpdf import FPDF
 import os
 import random

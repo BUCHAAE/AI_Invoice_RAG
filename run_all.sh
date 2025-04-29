@@ -1,4 +1,12 @@
 #!/bin/bash
+# Author: Andrew Buchanan
+# Date: 26/04/2025
+#
+# Purpose:
+# This shell script launches the Python menu interface 
+# ('menu.py') to allow the user to interactively choose actions 
+# such as cleaning the environment, creating invoices, or launching the system.
+
 
 echo "🧹 Cleaning old files..."
 
