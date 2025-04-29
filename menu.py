@@ -40,6 +40,7 @@ def create_test_invoices():
 
 def load_and_launch():
     print("🚀 Ingesting invoices and launching Q&A UI...")
+    subprocess.run(["python", "csv_builder.py"])
     subprocess.run(["python", "ingest_invoices_hybrid.py"])
     subprocess.run(["python", "demo_ui_hybrid.py"])
 
