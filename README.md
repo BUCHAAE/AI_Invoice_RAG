@@ -1,3 +1,5 @@
+![Logo](/logo.png)
+
 # Author Andrew Buchanan
 # Date 26/04/2025
 
