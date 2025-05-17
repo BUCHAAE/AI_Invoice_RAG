@@ -1,49 +1,97 @@
 InvoiceNumber,ServiceProviderName,ServiceProviderAddress,ClientName,ClientAddress,MonthBilledFor,Year,DogName,OriginalCostPerDay,PercentageDiscount,TotalAmountDue,DatesAttendedCount
-INV-2022-01,Pawprints and Playcare LLC,,Charlie Brown,,January,2022,Snoopy,22.50,50,45.00,4
-INV-2022-02,Pawprints and Playcare LLC,,Charlie Brown,,February,2022,Snoopy,22.50,50,45.00,4
-INV-2022-03,Pawprints and Playcare LLC,,Charlie Brown,,March,2022,Snoopy,22.50,50,45.00,4
-INV-2022-04,Pawprints and Playcare LLC,,Charlie Brown,,April,2022,Snoopy,22.50,50,45.00,4
-INV-2022-05,Pawprints and Playcare LLC,,Charlie Brown,,May,2022,Snoopy,22.50,50,45.00,4
-INV-2022-06,Pawprints and Playcare LLC,,Charlie Brown,,June,2022,Snoopy,22.50,50,45.00,4
-INV-2022-07,Pawprints and Playcare LLC,,Charlie Brown,,July,2022,Snoopy,22.50,50,45.00,4
-INV-2022-08,Pawprints and Playcare LLC,,Charlie Brown,,August,2022,Snoopy,22.50,50,45.00,4
-INV-2022-09,Pawprints and Playcare LLC,,Charlie Brown,,September,2022,Snoopy,22.50,50,45.00,4
-INV-2022-10,Pawprints and Playcare LLC,,Charlie Brown,,October,2022,Snoopy,22.50,50,45.00,4
-INV-2022-11,Pawprints and Playcare LLC,,Charlie Brown,,November,2022,Snoopy,22.50,50,45.00,4
-INV-2022-12,Pawprints and Playcare LLC,,Charlie Brown,,December,2022,Snoopy,22.50,50,45.00,4
-INV-2023-01,Pawprints and Playcare LLC,,Charlie Brown,,January,2023,Snoopy,22.50,50,45.00,4
-INV-2023-02,Pawprints and Playcare LLC,,Charlie Brown,,February,2023,Snoopy,22.50,50,45.00,4
-INV-2023-03,Pawprints and Playcare LLC,,Charlie Brown,,March,2023,Snoopy,22.50,50,45.00,4
-INV-2023-04,Pawprints and Playcare LLC,,Charlie Brown,,April,2023,Snoopy,22.50,50,45.00,4
-INV-2023-05,Pawprints and Playcare LLC,,Charlie Brown,,May,2023,Snoopy,22.50,50,45.00,4
-INV-2023-06,Pawprints and Playcare LLC,,Charlie Brown,,June,2023,Snoopy,22.50,50,45.00,4
-INV-2023-07,Pawprints and Playcare LLC,,Charlie Brown,,July,2023,Snoopy,22.50,50,45.00,4
-INV-2023-08,Pawprints and Playcare LLC,,Charlie Brown,,August,2023,Snoopy,22.50,50,45.00,4
-INV-2023-09,Pawprints and Playcare LLC,,Charlie Brown,,September,2023,Snoopy,22.50,50,45.00,4
-INV-2023-10,Pawprints and Playcare LLC,,Charlie Brown,,October,2023,Snoopy,22.50,50,45.00,4
-INV-2023-11,Pawprints and Playcare LLC,,Charlie Brown,,November,2023,Snoopy,22.50,50,45.00,4
-INV-2023-12,Pawprints and Playcare LLC,,Charlie Brown,,December,2023,Snoopy,22.50,50,45.00,4
-INV-2024-01,Pawprints and Playcare LLC,,Charlie Brown,,January,2024,Snoopy,22.50,50,45.00,4
-INV-2024-02,Pawprints and Playcare LLC,,Charlie Brown,,February,2024,Snoopy,22.50,50,45.00,4
-INV-2024-03,Pawprints and Playcare LLC,,Charlie Brown,,March,2024,Snoopy,22.50,50,45.00,4
-INV-2024-04,Pawprints and Playcare LLC,,Charlie Brown,,April,2024,Snoopy,22.50,50,45.00,4
-INV-2024-05,Pawprints and Playcare LLC,,Charlie Brown,,May,2024,Snoopy,22.50,50,45.00,4
-INV-2024-06,Pawprints and Playcare LLC,,Charlie Brown,,June,2024,Snoopy,22.50,50,45.00,4
-INV-2024-07,Pawprints and Playcare LLC,,Charlie Brown,,July,2024,Snoopy,22.50,50,45.00,4
-INV-2024-08,Pawprints and Playcare LLC,,Charlie Brown,,August,2024,Snoopy,22.50,50,45.00,4
-INV-2024-09,Pawprints and Playcare LLC,,Charlie Brown,,September,2024,Snoopy,22.50,50,45.00,4
-INV-2024-10,Pawprints and Playcare LLC,,Charlie Brown,,October,2024,Snoopy,22.50,50,45.00,4
-INV-2024-11,Pawprints and Playcare LLC,,Charlie Brown,,November,2024,Snoopy,22.50,50,45.00,4
-INV-2024-12,Pawprints and Playcare LLC,,Charlie Brown,,December,2024,Snoopy,22.50,50,45.00,4
-INV-2025-01,Pawprints and Playcare LLC,,Charlie Brown,,January,2025,Snoopy,22.50,50,45.00,4
-INV-2025-02,Pawprints and Playcare LLC,,Charlie Brown,,February,2025,Snoopy,22.50,50,45.00,4
-INV-2025-03,Pawprints and Playcare LLC,,Charlie Brown,,March,2025,Snoopy,22.50,50,45.00,4
-INV-2025-04,Pawprints and Playcare LLC,,Charlie Brown,,April,2025,Snoopy,22.50,50,45.00,4
-INV-2025-05,Pawprints and Playcare LLC,,Charlie Brown,,May,2025,Snoopy,22.50,50,45.00,4
-INV-2025-06,Pawprints and Playcare LLC,,Charlie Brown,,June,2025,Snoopy,22.50,50,45.00,4
-INV-2025-07,Pawprints and Playcare LLC,,Charlie Brown,,July,2025,Snoopy,22.50,50,45.00,4
-INV-2025-08,Pawprints and Playcare LLC,,Charlie Brown,,August,2025,Snoopy,22.50,50,45.00,4
-INV-2025-09,Pawprints and Playcare LLC,,Charlie Brown,,September,2025,Snoopy,22.50,50,45.00,4
-INV-2025-10,Pawprints and Playcare LLC,,Charlie Brown,,October,2025,Snoopy,22.50,50,45.00,4
-INV-2025-11,Pawprints and Playcare LLC,,Charlie Brown,,November,2025,Snoopy,22.50,50,45.00,4
-INV-2025-12,Pawprints and Playcare LLC,,Charlie Brown,,December,2025,Snoopy,22.50,50,45.00,4
+INV-2017-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2017,Snoopy,22.50,50,45.00,4
+INV-2017-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2017,Snoopy,22.50,50,45.00,4
+INV-2017-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2017,Snoopy,22.50,50,45.00,4
+INV-2017-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2017,Snoopy,22.50,50,45.00,4
+INV-2017-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2017,Snoopy,22.50,50,45.00,4
+INV-2017-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2017,Snoopy,22.50,50,45.00,4
+INV-2017-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2017,Snoopy,22.50,50,45.00,4
+INV-2017-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2017,Snoopy,22.50,50,45.00,4
+INV-2017-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2017,Snoopy,22.50,50,45.00,4
+INV-2017-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2017,Snoopy,22.50,50,45.00,4
+INV-2017-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2017,Snoopy,22.50,50,45.00,4
+INV-2017-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2017,Snoopy,22.50,50,45.00,4
+INV-2018-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2018,Snoopy,22.50,50,45.00,4
+INV-2018-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2018,Snoopy,22.50,50,45.00,4
+INV-2018-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2018,Snoopy,22.50,50,45.00,4
+INV-2018-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2018,Snoopy,22.50,50,45.00,4
+INV-2018-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2018,Snoopy,22.50,50,45.00,4
+INV-2018-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2018,Snoopy,22.50,50,45.00,4
+INV-2018-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2018,Snoopy,22.50,50,45.00,4
+INV-2018-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2018,Snoopy,22.50,50,45.00,4
+INV-2018-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2018,Snoopy,22.50,50,45.00,4
+INV-2018-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2018,Snoopy,22.50,50,45.00,4
+INV-2018-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2018,Snoopy,22.50,50,45.00,4
+INV-2018-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2018,Snoopy,22.50,50,45.00,4
+INV-2019-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2019,Snoopy,22.50,50,45.00,4
+INV-2019-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2019,Snoopy,22.50,50,45.00,4
+INV-2019-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2019,Snoopy,22.50,50,45.00,4
+INV-2019-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2019,Snoopy,22.50,50,45.00,4
+INV-2019-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2019,Snoopy,22.50,50,45.00,4
+INV-2019-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2019,Snoopy,22.50,50,45.00,4
+INV-2019-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2019,Snoopy,22.50,50,45.00,4
+INV-2019-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2019,Snoopy,22.50,50,45.00,4
+INV-2019-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2019,Snoopy,22.50,50,45.00,4
+INV-2019-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2019,Snoopy,22.50,50,45.00,4
+INV-2019-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2019,Snoopy,22.50,50,45.00,4
+INV-2019-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2019,Snoopy,22.50,50,45.00,4
+INV-2020-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2020,Snoopy,22.50,50,45.00,4
+INV-2020-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2020,Snoopy,22.50,50,45.00,4
+INV-2020-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2020,Snoopy,22.50,50,45.00,4
+INV-2020-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2020,Snoopy,22.50,50,45.00,4
+INV-2020-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2020,Snoopy,22.50,50,45.00,4
+INV-2020-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2020,Snoopy,22.50,50,45.00,4
+INV-2020-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2020,Snoopy,22.50,50,45.00,4
+INV-2020-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2020,Snoopy,22.50,50,45.00,4
+INV-2020-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2020,Snoopy,22.50,50,45.00,4
+INV-2020-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2020,Snoopy,22.50,50,45.00,4
+INV-2020-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2020,Snoopy,22.50,50,45.00,4
+INV-2020-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2020,Snoopy,22.50,50,45.00,4
+INV-2021-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2021,Snoopy,22.50,50,45.00,4
+INV-2021-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2021,Snoopy,22.50,50,45.00,4
+INV-2021-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2021,Snoopy,22.50,50,45.00,4
+INV-2021-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2021,Snoopy,22.50,50,45.00,4
+INV-2021-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2021,Snoopy,22.50,50,45.00,4
+INV-2021-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2021,Snoopy,22.50,50,45.00,4
+INV-2021-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2021,Snoopy,22.50,50,45.00,4
+INV-2021-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2021,Snoopy,22.50,50,45.00,4
+INV-2021-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2021,Snoopy,22.50,50,45.00,4
+INV-2021-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2021,Snoopy,22.50,50,45.00,4
+INV-2021-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2021,Snoopy,22.50,50,45.00,4
+INV-2021-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2021,Snoopy,22.50,50,45.00,4
+INV-2022-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2022,Snoopy,22.50,50,45.00,4
+INV-2022-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2022,Snoopy,22.50,50,45.00,4
+INV-2022-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2022,Snoopy,22.50,50,45.00,4
+INV-2022-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2022,Snoopy,22.50,50,45.00,4
+INV-2022-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2022,Snoopy,22.50,50,45.00,4
+INV-2022-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2022,Snoopy,22.50,50,45.00,4
+INV-2022-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2022,Snoopy,22.50,50,45.00,4
+INV-2022-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2022,Snoopy,22.50,50,45.00,4
+INV-2022-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2022,Snoopy,22.50,50,45.00,4
+INV-2022-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2022,Snoopy,22.50,50,45.00,4
+INV-2022-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2022,Snoopy,22.50,50,45.00,4
+INV-2022-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2022,Snoopy,22.50,50,45.00,4
+INV-2023-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2023,Snoopy,22.50,50,45.00,4
+INV-2023-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2023,Snoopy,22.50,50,45.00,4
+INV-2023-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2023,Snoopy,22.50,50,45.00,4
+INV-2023-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2023,Snoopy,22.50,50,45.00,4
+INV-2023-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2023,Snoopy,22.50,50,45.00,4
+INV-2023-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2023,Snoopy,22.50,50,45.00,4
+INV-2023-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2023,Snoopy,22.50,50,45.00,4
+INV-2023-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2023,Snoopy,22.50,50,45.00,4
+INV-2023-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2023,Snoopy,22.50,50,45.00,4
+INV-2023-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2023,Snoopy,22.50,50,45.00,4
+INV-2023-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2023,Snoopy,22.50,50,45.00,4
+INV-2023-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2023,Snoopy,22.50,50,45.00,4
+INV-2024-01,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",January,2024,Snoopy,22.50,50,45.00,4
+INV-2024-02,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",February,2024,Snoopy,22.50,50,45.00,4
+INV-2024-03,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",March,2024,Snoopy,22.50,50,45.00,4
+INV-2024-04,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",April,2024,Snoopy,22.50,50,45.00,4
+INV-2024-05,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",May,2024,Snoopy,22.50,50,45.00,4
+INV-2024-06,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",June,2024,Snoopy,22.50,50,45.00,4
+INV-2024-07,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",July,2024,Snoopy,22.50,50,45.00,4
+INV-2024-08,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",August,2024,Snoopy,22.50,50,45.00,4
+INV-2024-09,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",September,2024,Snoopy,22.50,50,45.00,4
+INV-2024-10,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",October,2024,Snoopy,22.50,50,45.00,4
+INV-2024-11,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",November,2024,Snoopy,22.50,50,45.00,4
+INV-2024-12,Pawprints and Playcare LLC,"7427 Willow Creek Drive, Suite 210, Bloomington, MN 55439, USA",Charlie Brown,"32 Willow Crescent, Bloomington, MN 55439, USA",December,2024,Snoopy,22.50,50,45.00,4

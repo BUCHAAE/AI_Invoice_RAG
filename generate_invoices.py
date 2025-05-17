@@ -1,6 +1,7 @@
 """
 Author: Andrew Buchanan
 Date: 26/04/2025
+Update:07/05/2025
 
 Purpose:
 This script generates synthetic PDF invoices for a fictional dog daycare business 
@@ -13,6 +14,8 @@ from fpdf import FPDF
 import os
 import random
 import calendar
+
+
 
 
 # Directory to store generated invoices
@@ -28,7 +31,7 @@ dog_name = "Snoopy"
 
 # Invoice settings
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-years = [2022, 2023, 2024, 2025]
+years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
 
 original_cost_per_day = 22.50
 percentage_discount = 50
@@ -37,21 +40,60 @@ percentage_discount = 50
 def generate_invoice(invoice_number, year, month, attendance_dates):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", size=12)
+    
+    pdf.set_font("Arial", style="B", size=10)
+    pdf.cell(0, 10, txt=f"Invoice Number: {invoice_number}", ln=True, align='R')
 
-    pdf.cell(200, 10, txt=f"Invoice Number: {invoice_number}", ln=True)
+    # Add a logo banner (adjust file path, width, and height as needed)
+    pdf.image("logo.png", x=25, y=20, w=150, h=50)
+
+    # Move cursor below the banner
+    pdf.ln(50)
+
+    
     pdf.cell(200, 10, txt=f"Service Provider Name: {service_provider_name}", ln=True)
+    #pdf.multi_cell(0, 10, txt=f"Service Provider Address: {service_provider_address}")
+
+
+    # Set font and write the address block
+    pdf.set_font("Arial", size=10)
+    x = pdf.get_x()
+    y = pdf.get_y()
     pdf.multi_cell(0, 10, txt=f"Service Provider Address: {service_provider_address}")
+    y_after = pdf.get_y()
+
+    # Draw a thick horizontal divider like a page break line
+    pdf.set_line_width(0.8)  # Thicker line
+    pdf.line(pdf.l_margin, y_after + 2, pdf.w - pdf.r_margin, y_after + 2)
+
+    # Reset line width if needed later
+    pdf.set_line_width(0.2)
+
+
+
 
     pdf.cell(200, 10, txt=f"Client Name: {client_name}", ln=True)
+
     pdf.multi_cell(0, 10, txt=f"Client Address: {client_address}")
 
     pdf.cell(200, 10, txt=f"Month Billed For: {month} {year}", ln=True)
+
     pdf.cell(200, 10, txt=f"Dog Name: {dog_name}", ln=True)
 
-    pdf.cell(200, 10, txt=f"Dates Attended:", ln=True)
+      # Table header
+    pdf.set_fill_color(200, 220, 255)  # Light blue
+    pdf.cell(60, 10, "Attendance Date", border=1, ln=True, fill=True)
+
+    # Table rows
     for date in attendance_dates:
-        pdf.cell(200, 10, txt=f"{date}", ln=True)
+        pdf.cell(60, 10, date, border=1, ln=True)
+
+    #pdf.output("attendance_table.pdf")
+
+
+    #pdf.cell(200, 10, txt=f"Dates Attended:", ln=True)
+    #for date in attendance_dates:
+    #    pdf.cell(200, 10, txt=f"{date}", ln=True)
 
     total_days = len(attendance_dates)
     discounted_cost_per_day = original_cost_per_day * (1 - percentage_discount / 100)

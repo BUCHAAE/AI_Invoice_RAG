@@ -39,6 +39,7 @@ attendance_csv = "attendance_detail.csv"
 summary_data = []
 attendance_data = []
 
+
 # Read invoices
 for filename in sorted(os.listdir(invoice_dir)):
     if filename.endswith(".pdf"):
@@ -54,10 +55,16 @@ for filename in sorted(os.listdir(invoice_dir)):
 
         invoice_number = extract_field(r"Invoice Number:\s*(.+)", text)
         service_provider_name = extract_field(r"Service Provider Name:\s*(.+)", text)
-        service_provider_address = extract_field(r"Service Provider Address:\s*(.+?)Client Name:", text, default="").replace("\n", " ").strip()
+        service_provider_address = extract_field(r"Service Provider Address:\s*(.+)", text)
         client_name = extract_field(r"Client Name:\s*(.+)", text)
-        client_address = extract_field(r"Client Address:\s*(.+?)Month Billed For:", text, default="").replace("\n", " ").strip()
-        month_billed_for = extract_field(r"Month Billed For:\s*(.+)", text)
+        client_address = extract_field(r"Client Address:\s*(.+)", text)
+        
+        month = extract_field(r"Month Billed For:\s*(\w+)", text)
+        year = extract_field(r"Invoice Number:\s*INV-(\d{4})", text)
+        month_billed_for = f"{month} {year}"
+
+
+
         dog_name = extract_field(r"Dog Name:\s*(.+)", text)
         original_cost_per_day = extract_field(r"Original Cost Per Day:\s*\$(\d+\.\d{2})", text)
         percentage_discount = extract_field(r"Percentage Discount:\s*(\d+)%", text)

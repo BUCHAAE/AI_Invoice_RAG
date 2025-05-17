@@ -3,75 +3,89 @@ Author: Andrew Buchanan
 Date: 26/04/2025
 
 Purpose:
-This script processes the CSV files created from the invoices, 
-creates a text-based vectorstore using a HuggingFace embedding model, 
-and saves the resulting database using Chroma for fast retrieval.
-It prepares the data for later Q&A interaction with the LLM.
+This script processes structured CSVs created from daycare invoices and attendance records.
+It builds a semantic vectorstore using sentence-transformer embeddings for retrieval-augmented generation.
+It also includes static facts such as the earliest attendance date to improve accuracy.
 """
 
 import os
 import pandas as pd
+from datetime import datetime
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # --- Configuration ---
 persist_directory = "chroma_db"
-csv_path = "invoice_summary.csv"
+invoice_csv = "invoice_summary.csv"
+attendance_csv = "attendance_detail.csv"
 embedding_model_name = "BAAI/bge-small-en"
 
-# --- Step 1: Read CSV ---
-if not os.path.exists(csv_path):
-    raise FileNotFoundError(f"❌ Couldn't find {csv_path}. Please run invoice creation first!")
+# --- Load CSVs ---
+if not os.path.exists(invoice_csv) or not os.path.exists(attendance_csv):
+    raise FileNotFoundError("❌ Required CSV files are missing. Please generate them first.")
 
-print(f"🔍 Reading CSV from {csv_path}...")
+print(f"📄 Reading {invoice_csv} and {attendance_csv}...")
+invoice_df = pd.read_csv(invoice_csv)
+attendance_df = pd.read_csv(attendance_csv)
 
-df = pd.read_csv(csv_path)
-
-# --- Step 2: Create text chunks ---
-print("📃 Creating text chunks for vectorstore...")
+invoice_df['TotalAmountDue'] = pd.to_numeric(invoice_df['TotalAmountDue'], errors='coerce').fillna(0)
+attendance_df["ParsedDate"] = pd.to_datetime(attendance_df["Date"], format="%d/%m/%Y", errors="coerce")
 
 documents = []
 
-for _, row in df.iterrows():
-    full_text = (
+# --- Invoices as text chunks ---
+for _, row in invoice_df.iterrows():
+    invoice_text = (
         f"Invoice Number: {row['InvoiceNumber']}. "
-        f"Service Provider: {row['ServiceProviderName']} at {row['ServiceProviderAddress']}. "
-        f"Client: {row['ClientName']} living at {row['ClientAddress']}. "
+        f"Month Billed: {row['MonthBilledFor']}. "
+        f"Year: {row['Year']}. "
+        f"Client: {row['ClientName']}, Address: {row['ClientAddress']}. "
+        f"Service Provider: {row['ServiceProviderName']}, Address: {row['ServiceProviderAddress']}. "
         f"Dog Name: {row['DogName']}. "
-        f"Month Billed For: {row['MonthBilledFor']}. "
-        f"Original Cost Per Day: ${row['OriginalCostPerDay']}. "
-        f"Percentage Discount: {row['PercentageDiscount']}%. "
-        f"Total Amount Due: ${row['TotalAmountDue']}. "
-        f"Number of Attendance Days: {row['DatesAttendedCount']}."
+        f"Cost Per Day: ${row['OriginalCostPerDay']}, Discount: {row['PercentageDiscount']}%. "
+        f"Total Due: ${row['TotalAmountDue']}. "
+        f"Days Attended: {row['DatesAttendedCount']}."
     )
-    documents.append(full_text)
+    documents.append(invoice_text)
 
-if not documents:
-    print("⚠️ No text documents created. Exiting...")
-    exit(1)
+# --- Attendance as text chunks, with year explicitly included ---
+attendance_years = set()
+for _, row in attendance_df.iterrows():
+    try:
+        date_obj = datetime.strptime(row['Date'], "%d/%m/%Y")
+        attendance_years.add(date_obj.year)
+        documents.append(
+            f"{row['DogName']} attended on {row['Date']} ({row['Day']}) in {date_obj.year} under invoice {row['InvoiceNumber']}."
+        )
+    except:
+        documents.append(
+            f"{row['DogName']} attended on {row['Date']} ({row['Day']}) under invoice {row['InvoiceNumber']}."
+        )
 
-# --- Step 3: Split into smaller chunks ---
+# --- Static facts ---
+first_attendance = attendance_df["ParsedDate"].min()
+if pd.notnull(first_attendance):
+    documents.append(f"Snoopy first attended daycare on {first_attendance.strftime('%d/%m/%Y')}.")
+
+# Invoice summary
+documents.append(f"There are {len(invoice_df)} invoices in total.")
+documents.append(f"The total cost for all invoices is ${invoice_df['TotalAmountDue'].sum():.2f}.")
+
+# Attendance year summary
+sorted_years = sorted(attendance_years)
+if sorted_years:
+    documents.append("Snoopy attended doggy daycare in the following years: " + ", ".join(str(y) for y in sorted_years))
+
+# --- Chunking ---
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-all_texts = text_splitter.split_text("\n".join(documents))
-
-print(f"🔹 Created {len(all_texts)} text chunks.")
-
-# --- Step 4: Create embeddings ---
-print("🔢 Building embeddings...")
-
-embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name)
-
-# --- Step 5: Create and persist Chroma vectorstore ---
-print("📦 Saving to Chroma database...")
+chunks = text_splitter.split_text("\n".join(documents))
 
 if os.path.exists(persist_directory):
     import shutil
     shutil.rmtree(persist_directory)
 
-vectorstore = Chroma.from_texts(all_texts, embedding=embeddings, persist_directory=persist_directory)
+embedding = HuggingFaceEmbeddings(model_name=embedding_model_name)
+vectorstore = Chroma.from_texts(chunks, embedding=embedding, persist_directory=persist_directory)
 
-# --- not required now
-#vectorstore.persist()
-
-print("✅ Vectorstore created successfully and saved to 'chroma_db'.")
+print("✅ Vectorstore created successfully.")

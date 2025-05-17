@@ -10,6 +10,27 @@
 # 4. Ingests the invoices into a vector database.
 # 5. Launches the Gradio-based Q&A system for user interaction.
 
+# Display ASCII art of Snoopy
+cat << "EOF"
+
+                    .----.
+                 _.'__    `.
+             .--(#)(##)---/#\
+           .' @          /###\
+           :         ,   #####
+            `-..__.-' _.-\###/
+       AMB        `;_:    `"'
+                .'"""""`.
+               /, hello ,\ 
+              //  world! \\
+              `-._______.-'
+              ___`. | .'___
+             (______|______)
+
+------------------------------------------------
+
+EOF
+
 # Activate the virtual environment if needed
 source ~/.pyenv/versions/ai-invoice-env/bin/activate
 
