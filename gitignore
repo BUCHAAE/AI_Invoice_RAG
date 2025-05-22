@@ -1,0 +1,27 @@
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env/
+venv/
+ai-invoice-env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Output files and generated content
+*.pdf
+invoices/
+chroma_db/
+invoice_summary.csv
+attendance_detail.csv

@@ -1,22 +1,29 @@
+
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+
 ![Logo](/logo.png)
 
-# Author Andrew Buchanan
-# Date 26/04/2025
-
-
 # Snoopy AI Invoice Demo
+**Author: Andrew Buchanan**  
+**Date: 26/04/2025**
 
 This project demonstrates an AI-powered Q&A system for analysing doggy daycare invoices using a local large language model (LLM) with Ollama and LangChain.
 
-## Features
+---
+
+## ✨ Features
 
 - Generates realistic test invoices (PDF)
 - Extracts structured data into CSVs
 - Builds a Chroma vector database with embeddings
-- Provides a Q&A interface using local LLM (Mixtral via Ollama)
-- Includes a menu system to run specific parts of the demo
+- Provides a Q&A interface using local LLM (e.g. Mixtral via Ollama)
+- Includes a CLI menu system to run parts or all of the demo
 
-## Requirements
+---
+
+## 🛠️ Requirements
 
 - Python 3.11+
 - Ollama (running a model like `mixtral`)
@@ -24,74 +31,85 @@ This project demonstrates an AI-powered Q&A system for analysing doggy daycare i
 - poppler-utils
 - Python packages from `requirements.txt`
 
-## Quick Start
+---
 
+## ⚡ Quick Start
 
-# Set up Python environment
+### 1. Set up Python environment
+```bash
 pyenv install 3.11.8
 pyenv virtualenv 3.11.8 ai-invoice-env
 pyenv activate ai-invoice-env
 pip install -r requirements.txt
+```
 
-# Install Ollama and pull model
+### 2. Install Ollama and pull model
+```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ollama pull mixtral
+```
 
-# Launch the menu
-python menu.py
+### 3. Launch the menu
+```bash
+python src/menu.py
+```
 
+---
 
+## 🔄 End-to-End Flow Overview
 
-## End-to-End Flow Overview
+### 🐾 1. Invoice Generation
+`src/generate_invoices.py` creates PDF invoices with structured fields such as client name, address, dates, and costs.
 
-     Invoice Generation
+### 📑 2. Invoice Processing and CSV Extraction
+`src/csv_builder.py` extracts invoice content into:
 
-        Python script (generate_invoices.py) programmatically creates realistic PDF invoices for a fictional doggy daycare.
+- `invoice_summary.csv`: One row per invoice with metadata
+- `attendance_detail.csv`: One row per attendance date
 
-        Each invoice contains structured fields (e.g. client name, address, dates, costs), making them easy to extract and parse.
+### 🧠 3. Embedding and Vectorstore Creation
+`src/ingest_invoices_hybrid.py` converts rows into narrative text and embeds it using `sentence-transformers`. The result is stored in a Chroma vector database.
 
-    # Invoice Processing and CSV Extraction
+### 💬 4. Local AI Q&A with Ollama
+`src/demo_ui_hybrid.py` launches a Gradio UI that:
 
-        csv_builder.py uses pdfplumber to extract structured data from the PDF invoices.
+- Accepts user questions
+- Retrieves relevant chunks from the vectorstore
+- Uses Ollama + LangChain to generate answers
 
-        It generates two CSV files:
+### 🧪 5. Interactive Launcher
+`src/menu.py` provides a terminal menu to:
 
-            invoice_summary.csv: One row per invoice with metadata (client, costs, discount, etc.).
+- Clean the environment
+- Create new test invoices
+- Build vector DB and launch the app
+- Run the whole process in one go
 
-            attendance_detail.csv: One row per attendance date with the day of the week and invoice reference.
+---
 
-    # Embedding and Vectorstore Creation
+## 🧩 System Dependencies
 
-        ingest_invoices_hybrid.py loads the invoice_summary.csv, converts each row to a human-readable paragraph of text.
+Make sure you have the following installed via your system package manager:
 
-        Text is chunked and embedded using HuggingFace (BAAI/bge-small-en) embeddings.
+- `poppler-utils` (for PDF parsing)
+- `tesseract-ocr` (if using OCR on scanned PDFs)
 
-        Embeddings are stored in a Chroma vector database for semantic search.
+---
 
-    # Local AI Q&A with Ollama
+## 📂 Folder Structure
 
-        demo_ui_hybrid.py launches a Gradio interface for interacting with a local large language model (LLM) (e.g. Mixtral via Ollama).
+```
+.
+├── src/                # All Python source files
+├── data/               # Optional data directory
+├── invoices/           # Generated PDF invoices
+├── chroma_db/          # Vector database
+├── invoice_summary.csv
+├── attendance_detail.csv
+├── run_all.sh
+├── run_menu.sh
+├── requirements.txt
+├── README.md
+```
 
-        The app uses LangChain RetrievalQA, which:
-
-            Accepts a user query.
-
-            Augments the query with static context from the CSVs (e.g. total invoices, provider, client info).
-
-            Retrieves relevant text chunks from the vectorstore.
-
-            Feeds both the query and context into the LLM to generate accurate responses.
-
-    # Interactive Demo Launcher
-
-        menu.py gives a simple terminal menu to run different stages:
-
-            Clean environment
-
-            Create test invoices
-
-            Load and launch the app
-
-            Run everything end-to-end
-
-
+---

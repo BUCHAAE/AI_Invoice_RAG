@@ -10,6 +10,9 @@
 # 4. Ingests the invoices into a vector database.
 # 5. Launches the Gradio-based Q&A system for user interaction.
 
+# Ensure script runs from the project root
+cd "$(dirname "$0")" || exit 1
+
 # Display ASCII art of Snoopy
 cat << "EOF"
 
@@ -40,5 +43,5 @@ echo "=== Checking Python Environment ==="
 which python3
 python3 --version
 
-# Run the Python menu
-python menu.py
+# Run the Python menu (now in src/)
+python3 src/menu.py
