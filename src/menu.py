@@ -15,12 +15,12 @@ import os
 import shutil
 import subprocess
 
-#--------------------------------
+#--------------------------------------------------------------------
 # Fake keys for testing scanning
-#--------------------------------
+#--------------------------------------------------------------------
 AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-#--------------------------------
+#--------------------------------------------------------------------
 
 def clean_environment():
     print("🧹 Cleaning environment...")
