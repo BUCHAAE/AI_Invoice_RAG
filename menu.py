@@ -15,6 +15,10 @@ import os
 import shutil
 import subprocess
 
+# Test the scanning.
+AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE"
+GITHUB_TOKEN = "ghp_FAKE1234567890TOKEN"
+
 def clean_environment():
     print("🧹 Cleaning environment...")
     folders_to_delete = ["invoices", "chroma_db"]

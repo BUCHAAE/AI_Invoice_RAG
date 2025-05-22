@@ -19,20 +19,26 @@ cat << "EOF"
            .' @          /###\
            :         ,   #####
             `-..__.-' _.-\###/
-       AMB        `;_:    `"'
+                  `;_:    `"'
                 .'"""""`.
                /,  MENU ,\ 
               //         \\
               `-._______.-'
               ___`. | .'___
-             (______|______)
-
+             (______|______)            
+             Andrew Buchanan.
 ------------------------------------------------
 
 EOF
 
+
+
 # Activate the virtual environment if needed
 source ~/.pyenv/versions/ai-invoice-env/bin/activate
+
+echo "=== Checking Python Environment ==="
+which python3
+python3 --version
 
 # Run the Python menu
 python menu.py
