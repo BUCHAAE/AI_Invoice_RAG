@@ -15,9 +15,10 @@ import os
 import shutil
 import subprocess
 
-# Test the scanning.
-AWS_SECRET_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE"
-GITHUB_TOKEN = "ghp_2uL6Rk3YPn89HVx4YZQvBEa2bNK4vE4byp0A"
+
+# Fake keyd for testing scanning
+AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
+AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 
 
 def clean_environment():
