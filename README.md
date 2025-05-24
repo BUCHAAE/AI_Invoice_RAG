@@ -2,6 +2,8 @@
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+**Download** - [![Download](https://img.shields.io/github/v/release/BUCHAAE/AI_Invoice_RAG?label=Download%20Latest%20Release)](https://github.com/BUCHAAE/AI_Invoice_RAG/releases/latest)
+
 
 ![Logo](/logo.png)
 
