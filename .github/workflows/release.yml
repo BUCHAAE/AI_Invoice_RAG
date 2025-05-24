@@ -1,0 +1,31 @@
+name: Create and Upload Release ZIP
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers when you push a tag like v1.0.0
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create release ZIP
+        run: |
+          mkdir -p package
+          cp app.py requirements.txt package/
+          cp *.sh package/ || true
+          cp -r scripts invoices images package/ || true
+          cd package
+          zip -r ../AI_Invoice_RAG_release.zip .
+          cd ..
+
+      - name: Upload ZIP to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: AI_Invoice_RAG_release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
